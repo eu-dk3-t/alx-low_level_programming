@@ -6,7 +6,9 @@
  * Author:
  * 	eu-dk3-t
  */
+
 #include "hash_tables.h"
+
 /**
  * Function name:
  * 	key_index 
@@ -18,10 +20,8 @@
  * Return:
  * 	Index of key in hash_table
  */
+
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int hash_key;
-
-	hash_key = hash_djb2((unsigned char *)key);
-	return (hash_key % size);
+	return ((hash_djb2(key) % size));
 }
